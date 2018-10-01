@@ -1,0 +1,1 @@
+1 0 * * * /usr/bin/bash /home/fdlhdpetl/data-purger/data_purge.sh

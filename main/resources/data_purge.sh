@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+cd /home/fdlhdpetl/data-purger;
+SPARK_MAJOR_VERSION=2 spark-submit --class purge --master yarn --deploy-mode cluster --keytab /home/fdlhdpetl/fdlhdpetl.keytab --principal fdlhdpetl@FDLDEV.COM --num-executors 2 --executor-cores 2 --executor-memory 4g --driver-memory 8g --driver-cores 4 --jars /home/fdlhdpetl/jars/postgresql-42.1.4.jar --files /usr/hdp/current/spark2-client/conf/hive-site.xml,datapurge.properties --name DATA-PURGE --conf spark.executor.extraClassPath=/home/fdlhdpetl/jars/postgresql-42.1.4.jar --driver-class-path /home/fdlhdpetl/jars/postgresql-42.1.4.jar  --conf spark.eventLog.compress=true --conf spark.eventLog.enabled=true datapurger_2.11-dev.jar --keep-days 7;
