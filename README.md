@@ -1,7 +1,7 @@
 Utility tool which allows you to delete tables/files from HADOOP ecosystem older than certain number of days
 
 Command to run:
-SPARK_MAJOR_VERSION=2 spark-submit --class purge --master yarn --deploy-mode client **[--keytab </path/to/keytab> --principal <kerberos principal>]** --num-executors 1 --executor-cores 1 --executor-memory 4g --driver-memory 4g --driver-cores 1 --files <path to hive-site.xml> --name DATA-PURGE datapurger_2.11-1.jar --keep-days <**past number of days to keep data for**> --hdfs-path <**HDFS path of the DB on your cluster**> --database <**database name**>
+SPARK_MAJOR_VERSION=2 spark-submit --class purge --master yarn --deploy-mode client --num-executors 1 --executor-cores 1 --executor-memory 4g --driver-memory 4g --driver-cores 1 --files <path to hive-site.xml> --name DATA-PURGE datapurger_2.11-1.jar --keep-days <**past number of days to keep data for**> --hdfs-path <**HDFS path of the DB on your cluster**> --database <**database name**>
 
 **Example:** With the below command we are deleting all tables which are **older than 7 days** located in **/apps/hive/warehouse/sales.db/** under the **sales** database
 
